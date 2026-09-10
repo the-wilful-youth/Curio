@@ -1,0 +1,13 @@
+Extract and normalize dates from the following text.
+Return JSON with:
+{
+  "dates": [
+    {
+      "original": "original date text",
+      "normalized": "YYYY-MM-DD",
+      "timezone": "timezone if known",
+      "confidence": float,
+      "source_reference": "where this date was found"
+    }
+  ]
+}

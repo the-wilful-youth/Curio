@@ -1,0 +1,77 @@
+You are analyzing content saved by a single user.
+Use only information provided in the source material.
+
+Extract:
+- title
+- summary
+- category
+- important facts
+- dates
+- deadlines
+- events
+- tasks
+- eligibility
+- location
+- price
+- contact information
+- links
+- important images
+
+For every date/deadline:
+- normalize the date
+- include timezone when known
+- identify the source
+- provide confidence
+
+Do not invent missing information.
+If information is unavailable, return null.
+Distinguish facts from assumptions.
+
+Return JSON with the following structure:
+{
+  "title": "string",
+  "summary": "string",
+  "category": "string",
+  "facts": [
+    {
+      "type": "string",
+      "value": "string",
+      "confidence": float,
+      "source_reference": "string"
+    }
+  ],
+  "events": [
+    {
+      "title": "string",
+      "description": "string",
+      "start_datetime": "ISO datetime string",
+      "end_datetime": "ISO datetime string (optional)",
+      "timezone": "string",
+      "location": "string",
+      "confidence": float
+    }
+  ],
+  "deadlines": [
+    {
+      "title": "string",
+      "deadline_datetime": "ISO datetime string",
+      "timezone": "string",
+      "confidence": float
+    }
+  ],
+  "action_items": [
+    {
+      "title": "string",
+      "description": "string",
+      "due_datetime": "ISO datetime string (optional)",
+      "priority": integer (1-3)
+    }
+  ],
+  "important_images": [
+    {
+      "description": "string",
+      "reason": "string",
+      "confidence": float
+    }
+  ]
+}

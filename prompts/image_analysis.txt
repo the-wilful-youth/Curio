@@ -1,0 +1,23 @@
+Analyze this image and provide:
+1. What is shown in the image?
+2. Is it informative or merely decorative?
+3. Does it contain text? If yes, extract the text.
+4. Does it contain dates, deadlines, or schedules?
+5. Does it contain a registration URL or contact information?
+6. Does it contain requirements or eligibility information?
+7. Is it a poster, screenshot, diagram, or photo?
+
+Return JSON with:
+{
+  "description": "string describing what's in the image",
+  "is_informative": boolean,
+  "ocr_text": "extracted text if any",
+  "contains_dates": boolean,
+  "contains_deadlines": boolean,
+  "contains_schedule": boolean,
+  "contains_registration_url": boolean,
+  "contains_requirements": boolean,
+  "image_type": "poster|screenshot|diagram|photo|unknown",
+  "importance_score": float (0.0-1.0),
+  "reason": "explanation of why this image is important or not"
+}
