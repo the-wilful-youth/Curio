@@ -14,7 +14,7 @@ google-auth-httplib2==0.1.1
 google-auth-oauthlib==1.2.0
 python-dotenv==1.0.0
 python-magic==0.4.27
-Pillow==10.1.0
+Pillow==13.0.0
 pytesseract==0.3.10
 opencv-python==4.8.1.78
 torch==2.3.0
